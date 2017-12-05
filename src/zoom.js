@@ -305,6 +305,7 @@ export default function() {
   }
 
   function touchmoved() {
+    if (!filter.apply(this, arguments)) return;
     var g = gesture(this, arguments),
         touches = event.changedTouches,
         n = touches.length, i, t, p, l;
